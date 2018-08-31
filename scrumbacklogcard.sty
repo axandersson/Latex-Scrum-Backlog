@@ -1,0 +1,47 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{scrumbacklogcard}
+\newcounter{backlogcard}[section] % new counter for problems
+\newenvironment{backlogcard}[5]
+{
+	\vskip.4\baselineskip
+	\noindent \fbox{  
+		\begin{minipage}{0.95\textwidth}
+			\begin{minipage}{\textwidth}
+				\subsection*{#1}
+				\fbox{
+					\begin{minipage}[t]{0.7\textwidth}
+						\subsubsection*{User story:}
+						\begin{minipage}{\textwidth}
+							#2     
+						\end{minipage}
+					\end{minipage}
+				}~
+				\fbox{\noindent \begin{minipage}[t]{0.2\textwidth}
+					\subsubsection*{Importance:}
+					\begin{minipage}{\textwidth}
+						#4
+					\end{minipage}
+					\end{minipage}
+				}
+			\end{minipage}
+			\begin{minipage}{\textwidth}
+				\fbox{
+					\begin{minipage}[t]{0.7\textwidth}
+						\subsubsection*{Comment:}
+						\begin{minipage}{\textwidth}
+							#3           
+						\end{minipage}
+					\end{minipage}
+				}~
+				\fbox{\noindent \begin{minipage}[t]{0.2\textwidth}
+					\subsubsection*{Estimate:}
+					\begin{minipage}{\textwidth}
+					   #5
+					\end{minipage}
+					\end{minipage}
+				}
+			\end{minipage}
+		\end{minipage}
+	}
+	\vskip.4\baselineskip
+} {}
